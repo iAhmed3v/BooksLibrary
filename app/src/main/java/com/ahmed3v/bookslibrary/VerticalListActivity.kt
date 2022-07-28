@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ahmed3v.bookslibrary.adapter.BookCardAdapter
 import com.ahmed3v.bookslibrary.const.Layout
+import com.ahmed3v.bookslibrary.data.DataSource
 import com.ahmed3v.bookslibrary.databinding.ActivityVerticalListBinding
 
 class VerticalListActivity : AppCompatActivity() {
@@ -14,9 +15,12 @@ class VerticalListActivity : AppCompatActivity() {
         binding = ActivityVerticalListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val myDataset = DataSource.Books
+
         binding.verticalRecyclerView.adapter = BookCardAdapter(
             applicationContext,
-            Layout.VERTICAL
+            Layout.VERTICAL,
+            myDataset
         )
 
         // Specify fixed size to improve performance

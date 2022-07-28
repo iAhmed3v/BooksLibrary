@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ahmed3v.bookslibrary.adapter.BookCardAdapter
 import com.ahmed3v.bookslibrary.const.Layout
+import com.ahmed3v.bookslibrary.data.DataSource
 import com.ahmed3v.bookslibrary.databinding.ActivityGridListBinding
 
 class GridListActivity : AppCompatActivity() {
@@ -14,9 +15,12 @@ class GridListActivity : AppCompatActivity() {
         binding = ActivityGridListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val myDataset = DataSource.Books
+
         binding.gridRecyclerView.adapter = BookCardAdapter(
             applicationContext,
-            Layout.GRID
+            Layout.GRID,
+            myDataset
         )
 
         // Specify fixed size to improve performance

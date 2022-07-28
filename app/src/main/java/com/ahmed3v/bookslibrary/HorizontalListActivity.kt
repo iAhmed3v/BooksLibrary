@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ahmed3v.bookslibrary.adapter.BookCardAdapter
 import com.ahmed3v.bookslibrary.const.Layout
+import com.ahmed3v.bookslibrary.data.DataSource
 import com.ahmed3v.bookslibrary.databinding.ActivityHorizontalListBinding
 
 class HorizontalListActivity : AppCompatActivity() {
@@ -14,9 +15,13 @@ class HorizontalListActivity : AppCompatActivity() {
         binding = ActivityHorizontalListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val myDataset = DataSource.Books
+
+
         binding.horizontalRecyclerView.adapter = BookCardAdapter(
             applicationContext,
-            Layout.HORIZONTAL
+            Layout.HORIZONTAL,
+            myDataset
         )
 
         // Specify fixed size to improve performance
