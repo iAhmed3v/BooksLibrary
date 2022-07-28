@@ -69,7 +69,7 @@ open class BaseTest {
          *
          * @param count The expected number of items in the RecyclerView adapter
          */
-        fun hasItemCount(count: Int): ViewAssertion {
+         fun hasItemCount(count: Int): ViewAssertion {
             return RecyclerViewAssertion(count)
         }
 
